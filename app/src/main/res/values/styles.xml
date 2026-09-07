@@ -1,0 +1,10 @@
+<resources>
+    <style name="Base.Theme.Baro" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#087F72</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">#FAFBFA</item>
+        <item name="android:navigationBarColor">#16201E</item>
+    </style>
+    <style name="Theme.Baro" parent="Base.Theme.Baro" />
+</resources>
