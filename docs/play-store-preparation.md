@@ -1,4 +1,27 @@
-# Google Play 등록 준비 — 2026-09-07
+# Google Play 등록 준비 — 2026-09-09
+
+## 내부 테스트 업데이트 0.1.1 (2)
+
+- IME 스캔 패널에 내비게이션 바 및 화면 컷아웃 여백 적용. 하단 입력·다시 스캔·수정 버튼의 시스템 버튼 겹침 수정.
+- 제스처/3버튼 내비게이션 및 측면 내비게이션 영역, 화면 전환, Activity 내 미리보기의 중복 여백 방지 회귀 테스트 추가.
+- `bundleRelease testDebugUnitTest lintRelease` 통과. 테스트 25개 통과. 실기기 확인은 연결된 기기가 없어 미수행.
+- 서명된 AAB: `app/build/outputs/bundle/release/app-release.aab`.
+- AAB SHA-256: `f55ea20420a1dbb1a6dd47d280cf797192de124ea227bedaae037881f2e5a0fb`.
+- Play Console 내부 테스트 업로드 준비 완료.
+
+## 내부 테스트 진행 상태 (9월 9일)
+
+- 우모 개인 개발자 계정에 바로입력 앱 생성 완료. 패키지 `im.umo.baro_input`.
+- 내부 테스트 `0.1.0 (1) 내부 테스트` 출시명과 한국어 출시 노트 초안 저장. 테스터 목록 2명 적용 완료.
+- 업로드 키 생성 및 Gradle 출시 서명 설정 완료. `bundleRelease lintRelease` 통과.
+- 키와 비밀번호 설정은 저장소 밖 `%USERPROFILE%/.android/baro-input/`에 보관하며 현재 Windows 사용자만 접근하도록 폴더 ACL을 설정함. 이 폴더는 안전한 별도 위치에 백업해야 함. 저장소에 키나 비밀번호를 추가하지 않음.
+- AAB 업로드 및 내부 테스트 출시 완료. Console에서 트랙 활성, `내부 테스터에게 제공됨` 확인 (2026-09-09 17:29 KST).
+- 참여 링크: https://play.google.com/apps/internaltest/4700439061568066999 (등록된 Google 계정으로 참여).
+- 검토 전 임시 앱 이름은 `im.umo.baro_input (unreviewed)`. 네이티브 디버그 기호 미첨부 경고 1개가 있으며 출시를 차단하는 오류는 없었음.
+- 업로드 AAB SHA-256: `e57f8f5e8bd03f0adb65312819b7dfab0628efb329c95a919c52d68e4ef9fcb4`.
+- Console에서 일반 공개 전 비공개 테스트 12명 이상, 연속 14일 및 프로덕션 액세스 신청이 필요한 계정임을 확인함. 내부 테스트는 이 요건을 대신하지 않음.
+
+## 이전 점검 기록 (9월 7일)
 
 아직 업로드하거나 심사에 제출하지 않았습니다.
 

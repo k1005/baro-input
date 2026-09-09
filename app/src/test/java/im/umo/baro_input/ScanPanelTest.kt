@@ -5,6 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Switch
+import androidx.core.graphics.Insets
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,6 +22,52 @@ class ScanPanelTest {
         if (view is ViewGroup) (0 until view.childCount).flatMap { children(view.getChildAt(it)) } else emptyList()
     private fun button(panel: View, title: String) = children(panel).filterIsInstance<Button>().single { it.text == title }
     private val bitmap get() = Bitmap.createBitmap(40, 20, Bitmap.Config.ARGB_8888)
+
+    @Test fun `bottom actions avoid navigation controls across pages and navigation modes`() {
+        val panel = ScanPanel(RuntimeEnvironment.getApplication(), true, false, {}, {}, { true })
+        fun applyNavigation(left: Int, right: Int, bottom: Int) {
+            ViewCompat.dispatchApplyWindowInsets(panel, WindowInsetsCompat.Builder()
+                .setInsets(WindowInsetsCompat.Type.navigationBars(), Insets.of(left, 0, right, bottom))
+                .build())
+        }
+        fun assertSafe(title: String, left: Int, right: Int, bottom: Int) {
+            panel.measure(View.MeasureSpec.makeMeasureSpec(320, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(400, View.MeasureSpec.AT_MOST))
+            panel.layout(0, 0, panel.measuredWidth, panel.measuredHeight)
+            val target = button(panel, title)
+            val rect = android.graphics.Rect()
+            target.getDrawingRect(rect)
+            panel.offsetDescendantRectToMyCoords(target, rect)
+            assertTrue(rect.top >= 0)
+            assertTrue(rect.bottom <= panel.height - bottom)
+            assertTrue(rect.left >= left && rect.right <= panel.width - right)
+            assertTrue(target.height >= 48)
+        }
+        applyNavigation(0, 0, 48)
+        panel.acceptRecognition(bitmap, "0012", listOf("0012"))
+        assertSafe("입력", 0, 0, 48)
+        button(panel, "수정").performClick()
+        assertSafe("수정 완료", 0, 0, 48)
+        assertSafe("수정 취소", 0, 0, 48)
+        applyNavigation(0, 0, 24)
+        assertSafe("수정 완료", 0, 0, 24)
+        applyNavigation(0, 48, 0)
+        assertSafe("수정 완료", 0, 48, 0)
+        applyNavigation(0, 0, 48)
+        panel.acceptRecognition(bitmap, "first\nsecond", listOf("first", "second"))
+        assertSafe("다시 스캔", 0, 0, 48)
+        panel.dispose()
+    }
+
+    @Test fun `embedded preview leaves system insets to its activity`() {
+        val panel = ScanPanel(RuntimeEnvironment.getApplication(), false, false, {}, {}, { true }, embedded = true)
+        ViewCompat.dispatchApplyWindowInsets(panel, WindowInsetsCompat.Builder()
+            .setInsets(WindowInsetsCompat.Type.navigationBars(), Insets.of(0, 0, 48, 48))
+            .build())
+        assertEquals(0, panel.paddingBottom)
+        assertEquals(0, panel.paddingRight)
+        panel.dispose()
+    }
 
     @Test fun `confirmation and edit completion stay visible in a short panel with large text`() {
         val app = RuntimeEnvironment.getApplication()

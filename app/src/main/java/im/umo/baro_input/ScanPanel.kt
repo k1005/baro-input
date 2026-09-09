@@ -11,6 +11,8 @@ import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.camera.view.PreviewView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions
@@ -48,7 +50,23 @@ internal class ScanPanel(
     init {
         orientation = VERTICAL
         setBackgroundColor(Color.WHITE)
+        if (!embedded) {
+            // Activity-hosted previews already receive safe-area padding from Ui.insets.
+            // The IME owns its own window and must protect every page's bottom actions.
+            ViewCompat.setOnApplyWindowInsetsListener(this) { view, insets ->
+                val safe = insets.getInsets(
+                    WindowInsetsCompat.Type.navigationBars() or WindowInsetsCompat.Type.displayCutout()
+                )
+                view.setPadding(safe.left, safe.top, safe.right, safe.bottom)
+                insets
+            }
+        }
         render()
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        if (!embedded) ViewCompat.requestApplyInsets(this)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
