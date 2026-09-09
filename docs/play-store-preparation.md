@@ -7,7 +7,8 @@
 - `bundleRelease testDebugUnitTest lintRelease` 통과. 테스트 25개 통과. 실기기 확인은 연결된 기기가 없어 미수행.
 - 서명된 AAB: `app/build/outputs/bundle/release/app-release.aab`.
 - AAB SHA-256: `f55ea20420a1dbb1a6dd47d280cf797192de124ea227bedaae037881f2e5a0fb`.
-- Play Console 내부 테스트 업로드 준비 완료.
+- Play Console 내부 테스트 출시 완료. 트랙 활성 및 `내부 테스터에게 제공됨` 확인 (2026-09-09 17:59 KST).
+- 출시 차단 오류 없음. 기존과 동일한 네이티브 디버그 기호 미첨부 경고 1개.
 
 ## 내부 테스트 진행 상태 (9월 9일)
 
