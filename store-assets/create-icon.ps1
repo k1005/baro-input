@@ -1,0 +1,25 @@
+Add-Type -AssemblyName System.Drawing
+$bitmap = New-Object System.Drawing.Bitmap(512,512,[System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+$g = [System.Drawing.Graphics]::FromImage($bitmap)
+$g.SmoothingMode = 'AntiAlias'
+$g.Clear([System.Drawing.ColorTranslator]::FromHtml('#E6F4F1'))
+$teal = New-Object System.Drawing.SolidBrush([System.Drawing.ColorTranslator]::FromHtml('#087F72'))
+# Reproduce the app's existing Material camera vector on an opaque Play icon canvas.
+$g.TranslateTransform(64,64)
+$g.ScaleTransform(16,16)
+$p = New-Object System.Drawing.Drawing2D.GraphicsPath
+$p.AddLines([System.Drawing.PointF[]]@([System.Drawing.PointF]::new(9,2),[System.Drawing.PointF]::new(7.17,4),[System.Drawing.PointF]::new(4,4)))
+$p.AddBezier(4,4,2.9,4,2,4.9,2,6)
+$p.AddLine(2,6,2,18)
+$p.AddBezier(2,18,2,19.1,2.9,20,4,20)
+$p.AddLine(4,20,20,20)
+$p.AddBezier(20,20,21.1,20,22,19.1,22,18)
+$p.AddLine(22,18,22,6)
+$p.AddBezier(22,6,22,4.9,21.1,4,20,4)
+$p.AddLines([System.Drawing.PointF[]]@([System.Drawing.PointF]::new(20,4),[System.Drawing.PointF]::new(16.83,4),[System.Drawing.PointF]::new(15,2),[System.Drawing.PointF]::new(9,2)))
+$p.CloseFigure()
+$p.AddEllipse(7,7,10,10)
+$g.FillPath($teal,$p)
+$g.FillEllipse($teal,8.8,8.8,6.4,6.4)
+$bitmap.Save((Join-Path $PSScriptRoot 'ko-KR/icon-camera-legacy-512.png'),[System.Drawing.Imaging.ImageFormat]::Png)
+$p.Dispose(); $teal.Dispose(); $g.Dispose(); $bitmap.Dispose()
