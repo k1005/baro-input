@@ -45,17 +45,17 @@ class ScanPanelTest {
         }
         applyNavigation(0, 0, 48)
         panel.acceptRecognition(bitmap, "0012", listOf("0012"))
-        assertSafe("입력", 0, 0, 48)
-        button(panel, "수정").performClick()
-        assertSafe("수정 완료", 0, 0, 48)
-        assertSafe("수정 취소", 0, 0, 48)
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.insert), 0, 0, 48)
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.edit)).performClick()
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.edit_done), 0, 0, 48)
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.edit_cancel), 0, 0, 48)
         applyNavigation(0, 0, 24)
-        assertSafe("수정 완료", 0, 0, 24)
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.edit_done), 0, 0, 24)
         applyNavigation(0, 48, 0)
-        assertSafe("수정 완료", 0, 48, 0)
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.edit_done), 0, 48, 0)
         applyNavigation(0, 0, 48)
         panel.acceptRecognition(bitmap, "first\nsecond", listOf("first", "second"))
-        assertSafe("다시 스캔", 0, 0, 48)
+        assertSafe(RuntimeEnvironment.getApplication().getString(R.string.rescan), 0, 0, 48)
         panel.dispose()
     }
 
@@ -86,9 +86,9 @@ class ScanPanelTest {
             assertTrue(rect.left >= 0 && rect.right <= panel.width)
             assertTrue(target.height >= 48)
         }
-        assertVisible("입력")
-        button(panel, "수정").performClick()
-        assertVisible("수정 완료")
+        assertVisible(RuntimeEnvironment.getApplication().getString(R.string.insert))
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.edit)).performClick()
+        assertVisible(RuntimeEnvironment.getApplication().getString(R.string.edit_done))
         panel.dispose()
     }
 
@@ -97,7 +97,7 @@ class ScanPanelTest {
         val panel = ScanPanel(RuntimeEnvironment.getApplication(), false, false, {}, {}, { true },
             pickImage = { selected = true })
         panel.begin()
-        button(panel, "사진첩 · 이미지 파일 선택").performClick()
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.pick_image)).performClick()
         assertTrue(selected)
         panel.dispose()
     }
@@ -106,7 +106,7 @@ class ScanPanelTest {
         val panel = ScanPanel(RuntimeEnvironment.getApplication(), false, true, {}, {}, { true },
             pickImage = { fail("restricted picker") })
         panel.begin()
-        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == "사진첩 · 이미지 파일 선택" })
+        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == RuntimeEnvironment.getApplication().getString(R.string.pick_image) })
         panel.dispose()
     }
 
@@ -115,13 +115,13 @@ class ScanPanelTest {
         val panel = ScanPanel(RuntimeEnvironment.getApplication(), true, false, {}, {},
             { committed = it; true }, sampleBitmap = bitmap)
         panel.begin()
-        assertTrue(button(panel, "이 사진 읽기").isEnabled)
-        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == "촬영하고 읽기" })
+        assertTrue(button(panel, RuntimeEnvironment.getApplication().getString(R.string.read_test_image)).isEnabled)
+        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == RuntimeEnvironment.getApplication().getString(R.string.capture) })
         panel.acceptRecognition(bitmap, "SERIAL NUMBER\n0012 3456 7890", listOf("SERIAL NUMBER", "0012 3456 7890"))
         button(panel, "0012 3456 7890").performClick()
         assertNull(committed)
         children(panel).filterIsInstance<Switch>().single().isChecked = true
-        button(panel, "입력").performClick()
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.insert)).performClick()
         assertEquals("001234567890", committed)
         panel.dispose()
     }
@@ -129,7 +129,7 @@ class ScanPanelTest {
     @Test fun `sample does not bypass restricted editor policy`() {
         val panel = ScanPanel(RuntimeEnvironment.getApplication(), true, true, {}, {}, { true }, sampleBitmap = bitmap)
         panel.begin()
-        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == "이 사진 읽기" })
+        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == RuntimeEnvironment.getApplication().getString(R.string.read_test_image) })
         panel.dispose()
     }
 
@@ -148,17 +148,17 @@ class ScanPanelTest {
         panel.acceptRecognition(bitmap, "0012 3456", listOf("0012 3456"))
         assertNull(committed)
         children(panel).filterIsInstance<Switch>().single().isChecked = true
-        button(panel, "입력").performClick()
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.insert)).performClick()
         assertEquals("00123456", committed)
-        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == "입력" })
+        assertTrue(children(panel).filterIsInstance<Button>().none { it.text == RuntimeEnvironment.getApplication().getString(R.string.insert) })
         panel.dispose()
     }
     @Test fun `ambiguous OCR must be corrected before number insertion`() {
         var inserted = false
         val panel = ScanPanel(RuntimeEnvironment.getApplication(), true, false, {}, {}, { inserted = true; true })
         panel.acceptRecognition(bitmap, "O012", listOf("O012"))
-        assertFalse(button(panel, "입력").isEnabled)
-        button(panel, "입력").performClick()
+        assertFalse(button(panel, RuntimeEnvironment.getApplication().getString(R.string.insert)).isEnabled)
+        button(panel, RuntimeEnvironment.getApplication().getString(R.string.insert)).performClick()
         assertFalse(inserted)
         panel.dispose()
     }

@@ -1,0 +1,26 @@
+Turn printed text into input, without retyping it all.
+
+Baro Input is an Android auxiliary keyboard that reads text and numbers from camera shots or saved images. Choose the line you need, check it against the original, and tap Insert to put it into your current input field.
+
+HOW IT WORKS
+1. Enable Baro Input in Android keyboard settings.
+2. Tap a field in another app and switch to Baro Input.
+3. Take a photo or choose an image from your device.
+4. Review the recognized text and tap Insert.
+
+MADE FOR EVERYDAY INPUT
+• Read product numbers, labels, printed notes, and other text.
+• Select one recognized line or all of the text.
+• Remove spaces, move the cursor, delete characters, or add separators.
+• Use the number keypad to correct numeric results.
+• Practice with the included sample image before using another app.
+
+FOUR RECOGNITION LANGUAGES
+Read English, Japanese, Chinese, and Korean. Choose the recognition language independently of the display language. The interface supports English, Japanese, Korean, and Simplified and Traditional Chinese. It follows a supported device language and otherwise uses English.
+
+ON-DEVICE RECOGNITION
+Recognition models are included in the app and work offline. No account or ads. Photos and recognized text are not uploaded to developer servers. Temporary results are cleared when the keyboard session ends.
+
+Baro Input is a separate keyboard you switch to when needed. It does not add a button to Gboard or Samsung Keyboard. Scanning is unavailable in password fields. Recognition can make mistakes, including similar characters and Chinese character forms, so compare the result with the original before inserting. To type new letters, insert the result and edit it with your usual keyboard.
+
+Support: ceo@umo.im

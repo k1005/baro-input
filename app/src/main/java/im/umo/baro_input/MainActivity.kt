@@ -43,7 +43,7 @@ class MainActivity : Activity() {
         content.block(imeCard, 12)
         content.block(Ui.button(this, getString(R.string.practice), true) { startActivity(Intent(this, PracticeActivity::class.java)) }, 24)
         content.block(Ui.text(this, getString(R.string.privacy), 14f).apply { setTextColor(Ui.muted) }, 24)
-        content.block(Ui.quietButton(this, "개인정보처리방침") {
+        content.block(Ui.quietButton(this, getString(R.string.privacy_policy)) {
             startActivity(Intent(this, PrivacyActivity::class.java))
         }, 8)
         scroll.addView(content); setContentView(scroll); insets(scroll)

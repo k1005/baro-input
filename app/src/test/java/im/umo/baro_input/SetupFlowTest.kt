@@ -22,7 +22,7 @@ class SetupFlowTest {
         val activity = controller.get()
         val scroll = children(activity.window.decorView).filterIsInstance<android.widget.ScrollView>().single()
         assertTrue("Content must retain a horizontal gutter before insets dispatch", scroll.paddingLeft > 0)
-        val button = children(activity.window.decorView).filterIsInstance<Button>().single { it.text == "연습해보기" }
+        val button = children(activity.window.decorView).filterIsInstance<Button>().single { it.text == activity.getString(R.string.practice) }
         button.performClick()
         assertEquals(PracticeActivity::class.java.name, shadowOf(activity).nextStartedActivity.component?.className)
         controller.pause().stop().destroy()

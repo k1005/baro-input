@@ -1,0 +1,37 @@
+Baro Input Privacy Policy
+
+Effective date: September 9, 2026
+
+Umo (the developer) explains below how the Android app Baro Input (package: im.umo.baro_input) handles personal information. Send privacy inquiries and requests to exercise your rights to ceo@umo.im.
+
+1. Photos and recognized text
+
+Baro Input processes photos you take or images you explicitly select through the system file picker on your device to recognize text and numbers. Camera images, selected images, and recognition results are not sent to developer servers. The app has no internet permission, and recognition models are bundled with the app.
+
+Images and results are processed temporarily in memory while the feature is in use. The app does not save captured photos to your gallery or keep a recognition history in files. Results for an input session are released when that session ends. A temporary request used to deliver a selected photo to the keyboard lasts up to five minutes. Practice results remain visible while the practice screen is open. The app does not delete your original photos.
+
+2. Input fields in other apps
+
+Through the Android input method framework, Baro Input checks the target app identifier, field identifier, and input type to restrict password input and prevent insertion into the wrong field. These details are not sent to the developer. Text is delivered only after you review the result and tap Insert. Once inserted, the information is handled according to the target app's privacy policy and your settings.
+
+3. Permissions and your choices
+
+Camera permission is required for taking photos and can be revoked at any time in Android settings. You can still read saved photos if you deny camera permission. Photo selection uses the Android system file picker and does not request access to your entire gallery or storage. You can disable the keyboard in Android settings. Your selected recognition language is saved on the device for later use; photos and recognized text are not saved with this preference.
+
+4. Bundled software and on-device diagnostics
+
+Text recognition uses the bundled Google ML Kit models for Latin, Japanese, Chinese, and Korean scripts. During operation, ML Kit may process diagnostic information such as an installation identifier, device and app information, and performance data on the device. The app's distribution configuration removes internet and network-state permissions to block network transmission by the app. Photos and results are not used for cloud text recognition. If the SDK or permission configuration changes, this policy and the store's Data safety information will be updated together.
+
+Android, Google Play, and external apps or websites you choose handle their own data according to their respective providers' policies.
+
+5. Accounts, advertising, and support
+
+Baro Input has no registration, advertising, or in-app purchases. The developer does not collect or sell photos or recognition results processed by the app.
+
+If you email support, the developer processes your email address and inquiry to respond and resolve issues. Avoid including unnecessary photos or sensitive information. Inquiry information is deleted when processing is complete and retention is no longer necessary, unless retention is required by law, in which case it is kept for that period. Requests for access, correction, or deletion can be sent to ceo@umo.im.
+
+6. Deletion and policy changes
+
+You can delete the app's on-device data by clearing its data in Android settings or uninstalling the app. Original photos and text inserted into other apps must be managed separately in those locations. Since the app has no accounts, there is no separate account deletion process.
+
+If processing practices change, this page and its effective date will be updated. Changes materially affecting your rights will be announced in the app or store listing.

@@ -7,4 +7,5 @@ local.properties
 *.jks
 *.keystore
 captures/
+!store-assets/captures/
 releases/*.apk

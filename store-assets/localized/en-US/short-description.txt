@@ -1,0 +1,1 @@
+Read text from photos, check it, and insert it with a camera keyboard

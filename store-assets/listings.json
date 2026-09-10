@@ -1,0 +1,147 @@
+{
+  "en-US": {
+    "title": "Baro Input",
+    "short": "Read text from photos, check it, and insert it with a camera keyboard",
+    "full": "Turn printed text into input, without retyping it all.\n\nBaro Input is an Android auxiliary keyboard that reads text and numbers from camera shots or saved images. Choose the line you need, check it against the original, and tap Insert to put it into your current input field.\n\nHOW IT WORKS\n1. Enable Baro Input in Android keyboard settings.\n2. Tap a field in another app and switch to Baro Input.\n3. Take a photo or choose an image from your device.\n4. Review the recognized text and tap Insert.\n\nMADE FOR EVERYDAY INPUT\n• Read product numbers, labels, printed notes, and other text.\n• Select one recognized line or all of the text.\n• Remove spaces, move the cursor, delete characters, or add separators.\n• Use the number keypad to correct numeric results.\n• Practice with the included sample image before using another app.\n\nFOUR RECOGNITION LANGUAGES\nRead English, Japanese, Chinese, and Korean. Choose the recognition language independently of the display language. The interface supports English, Japanese, Korean, and Simplified and Traditional Chinese. It follows a supported device language and otherwise uses English.\n\nON-DEVICE RECOGNITION\nRecognition models are included in the app and work offline. No account or ads. Photos and recognized text are not uploaded to developer servers. Temporary results are cleared when the keyboard session ends.\n\nBaro Input is a separate keyboard you switch to when needed. It does not add a button to Gboard or Samsung Keyboard. Scanning is unavailable in password fields. Recognition can make mistakes, including similar characters and Chinese character forms, so compare the result with the original before inserting. To type new letters, insert the result and edit it with your usual keyboard.\n\nSupport: ceo@umo.im",
+    "headlines": [
+      "Photo to text.\nLess retyping.",
+      "Choose the line\nyou need.",
+      "Check first.\nThen insert.",
+      "Right into\nyour field.",
+      "Four languages.\nOne simple flow."
+    ],
+    "subtitles": [
+      "Use the camera or a saved image.",
+      "Keep one line or select all the text.",
+      "Compare with the original. Remove spaces.",
+      "Practice safely before using another app.",
+      "English, Japanese, Chinese and Korean."
+    ],
+    "alts": [
+      "Photo practice showing the saved box image and the Read this photo button.",
+      "Recognized lines from a box label, with individual line selection.",
+      "Original photo and recognized number shown together before insertion.",
+      "The recognized number appears in the practice field after insertion.",
+      "Recognition language menu with English, Japanese, Chinese and Korean."
+    ],
+    "eyebrow": "CAMERA + PHOTO KEYBOARD",
+    "footer": "On-device text recognition",
+    "featureAlt": "A scanned paper number moves into an input field, with spaces removed and a confirmation check."
+  },
+  "ko-KR": {
+    "title": "바로입력",
+    "short": "카메라와 사진으로 읽은 글자와 숫자를 확인하고 원하는 입력칸에 넣는 보조 키보드",
+    "full": "종이나 라벨의 글자를 길게 다시 입력하지 마세요.\n\n바로입력은 카메라로 촬영하거나 저장된 사진에서 읽은 글자·숫자를 현재 입력칸에 넣는 Android 보조 키보드입니다. 필요한 줄을 고르고 원본과 비교한 뒤, 직접 ‘입력’을 누르면 내용이 들어갑니다.\n\n이렇게 사용하세요\n1. Android 키보드 설정에서 바로입력을 활성화합니다.\n2. 다른 앱의 입력칸을 누르고 바로입력으로 전환합니다.\n3. 카메라로 촬영하거나 기기에 저장된 이미지를 선택합니다.\n4. 인식한 내용을 확인하고 ‘입력’을 누릅니다.\n\n일상에서 편리하게\n• 제품번호, 라벨, 인쇄된 메모와 글자 읽기\n• 여러 줄 중 필요한 줄 또는 전체 내용 선택\n• 공백 제거, 커서 이동, 글자 삭제와 구분자 추가\n• 숫자 키패드로 인식한 번호 수정\n• 다른 앱에서 사용하기 전, 내장 샘플로 입력 연습\n\n4개 언어 문자 인식\n한국어·영어·일본어·중국어를 읽습니다. 화면 언어와 별도로 인식 언어를 선택할 수 있습니다. 화면은 영어·일본어·한국어·중국어 간체·번체를 지원하며, 디바이스에 설정된 지원 언어를 따르고 그 외에는 영어로 표시됩니다.\n\n기기 안에서 처리\n문자 인식 모델이 앱에 포함되어 인터넷 없이 사용할 수 있습니다. 계정과 광고가 없으며, 사진과 인식 결과를 개발자 서버로 전송하지 않습니다. 입력기 세션이 끝나면 임시 결과를 지웁니다.\n\n바로입력은 필요할 때 전환하는 별도 키보드입니다. 삼성 키보드나 Gboard에 버튼을 추가하는 앱은 아닙니다. 비밀번호 입력칸에서는 스캔을 사용할 수 없습니다. 유사 글자나 중국어 자형 등에서 오인식할 수 있으므로 입력 전에 원본과 비교해주세요. 새 글자를 입력하려면 결과를 넣은 뒤 기존 키보드로 편집하세요.\n\n문의: ceo@umo.im",
+    "headlines": [
+      "사진 속 글자를,\n다시 쓰지 않도록.",
+      "필요한 줄만\n쏙 골라서.",
+      "원본과 확인하고,\n바로 입력.",
+      "확인한 내용이\n입력칸으로.",
+      "4개 언어를\n하나의 흐름으로."
+    ],
+    "subtitles": [
+      "카메라로 촬영하거나 저장된 사진을 선택하세요.",
+      "여러 줄 중 한 줄, 또는 전체 내용을 선택하세요.",
+      "공백을 없애고, 잘못 읽은 숫자는 수정하세요.",
+      "다른 앱에서 쓰기 전에 안전하게 연습하세요.",
+      "한국어 · 영어 · 일본어 · 중국어"
+    ],
+    "alts": [
+      "저장된 박스 사진과 이 사진 읽기 버튼이 보이는 사진 인식 연습 화면.",
+      "박스 라벨에서 인식한 여러 줄 중 필요한 줄을 선택하는 화면.",
+      "원본 사진과 인식한 번호를 비교하고 입력하기 전 확인하는 화면.",
+      "입력을 누른 후 연습 결과 칸에 인식한 번호가 표시된 화면.",
+      "영어, 일본어, 중국어, 한국어를 선택하는 인식 언어 메뉴."
+    ],
+    "eyebrow": "카메라와 사진으로 입력",
+    "footer": "인터넷 없이, 기기 안에서 문자 인식",
+    "featureAlt": "스캔한 종이의 숫자가 공백 없이 입력칸으로 옮겨지고 확인 표시가 나타나는 그래픽."
+  },
+  "ja-JP": {
+    "title": "Baro Input",
+    "short": "カメラや写真の文字・数字を読み取り、確認して入力欄に入れる補助キーボード",
+    "full": "紙やラベルの文字を、最初から打ち直す手間を減らしましょう。\n\nBaro Inputは、カメラで撮影した画像や保存済みの写真から文字・数字を読み取り、現在の入力欄に入れるAndroid用の補助キーボードです。必要な行を選び、元の画像と比較してから「入力」を押します。\n\n使い方\n1. Androidのキーボード設定でBaro Inputを有効にします。\n2. 他のアプリの入力欄をタップし、Baro Inputに切り替えます。\n3. カメラで撮影するか、端末の画像を選びます。\n4. 認識した内容を確認して「入力」を押します。\n\n毎日の入力に\n• 製品番号、ラベル、印刷されたメモなどを読み取り\n• 複数行から必要な1行、またはすべての内容を選択\n• 空白の削除、カーソル移動、文字の削除、区切り文字の追加\n• 数字キーパッドで認識結果を修正\n• 他のアプリで使う前に、付属サンプルで入力を練習\n\n4言語の文字認識\n英語・日本語・中国語・韓国語に対応。認識言語は表示言語とは別に選べます。画面は英語・日本語・韓国語・簡体字中国語・繁体字中国語に対応し、端末の対応言語に合わせて表示します。それ以外は英語で表示されます。\n\n端末内で処理\n認識モデルはアプリに含まれており、オフラインで使えます。アカウント登録や広告はありません。写真や認識結果を開発者のサーバーに送信しません。入力セッションの終了時に一時的な結果を消去します。\n\nBaro Inputは必要なときに切り替えて使う独立したキーボードです。GboardやSamsungキーボードにボタンを追加するアプリではありません。パスワード欄ではスキャンを利用できません。似た文字や中国語の字形などを誤認識する場合があるため、入力前に元の画像と比較してください。新しい文字を入力するには、結果を入力した後、普段のキーボードで編集してください。\n\nお問い合わせ：ceo@umo.im",
+    "headlines": [
+      "写真の文字を、\n打ち直さずに。",
+      "必要な行だけ、\n選んで入力。",
+      "元の画像と確認。\nそのまま入力。",
+      "確認した文字が、\n入力欄へ。",
+      "4つの言語を、\n同じ操作で。"
+    ],
+    "subtitles": [
+      "カメラで撮影、または保存済みの写真から。",
+      "1行だけでも、すべての内容でも。",
+      "空白を削除。読み違えた数字も修正。",
+      "他のアプリで使う前に、練習できます。",
+      "英語・日本語・中国語・韓国語"
+    ],
+    "alts": [
+      "箱の写真と読み取りボタンが表示された写真読み取り練習画面。",
+      "箱のラベルから認識した複数行のうち、必要な行を選ぶ画面。",
+      "元の画像と認識した番号を並べ、入力前に確認する画面。",
+      "入力後、練習結果の欄に認識した番号が表示された画面。",
+      "英語、日本語、中国語、韓国語を選べる認識言語メニュー。"
+    ],
+    "eyebrow": "カメラと写真で文字入力",
+    "footer": "オフラインで、端末内の文字認識",
+    "featureAlt": "紙の数字をスキャンして空白を除き、入力欄へ移す流れと確認マーク。"
+  },
+  "zh-CN": {
+    "title": "Baro Input",
+    "short": "用相机或照片识别文字和数字，确认后直接填入输入框的辅助键盘",
+    "full": "把纸张和标签上的文字变成输入内容，减少逐字重打。\n\nBaro Input 是一款 Android 辅助键盘，可从拍摄的照片或已保存的图片中识别文字和数字。选择需要的行，与原图核对后点按“插入”，即可填入当前输入框。\n\n使用方法\n1. 在 Android 键盘设置中启用 Baro Input。\n2. 点按其他应用的输入框，切换到 Baro Input。\n3. 拍照或选择设备中的图片。\n4. 确认识别内容，然后点按“插入”。\n\n适合日常输入\n• 识别产品编号、标签、印刷便笺等内容\n• 从多行文字中选择一行或全部内容\n• 移除空格、移动光标、删除字符或添加分隔符\n• 使用数字键盘修正识别出的编号\n• 在其他应用中使用前，先用内置示例练习\n\n支持四种识别语言\n可识别英语、日语、中文和韩语。识别语言可独立于界面语言选择。界面支持英语、日语、韩语、简体中文和繁体中文，跟随设备设置中的受支持语言，其他语言则显示英语。\n\n在设备上处理\n识别模型随应用提供，无需联网即可使用。无需账号，没有广告。照片和识别结果不会上传至开发者服务器。输入会话结束后会清除临时结果。\n\nBaro Input 是按需切换使用的独立键盘，不会向 Gboard 或三星键盘添加按钮。密码输入框无法使用扫描功能。相似字符或中文简繁字形可能被误识别，请在插入前与原图核对。如需输入新文字，请先插入结果，再用常用键盘编辑。\n\n联系支持：ceo@umo.im",
+    "headlines": [
+      "照片里的文字，\n不必逐字重打。",
+      "只选需要的行，\n输入更省事。",
+      "先核对原图，\n再直接插入。",
+      "确认的内容，\n进入输入框。",
+      "四种语言，\n同样简单。"
+    ],
+    "subtitles": [
+      "用相机拍照，或选择已保存的图片。",
+      "选择其中一行，也可以选择全部内容。",
+      "移除空格，也能修正识别有误的数字。",
+      "在其他应用中使用前，先安心练习。",
+      "英语、日语、中文、韩语"
+    ],
+    "alts": [
+      "照片识别练习页面，显示包装盒照片和识别按钮。",
+      "从包装盒标签识别出的多行文字中选择需要的行。",
+      "同时显示原始照片与识别编号，供插入前核对。",
+      "插入后，识别出的编号显示在练习结果框中。",
+      "识别语言菜单，可选择英语、日语、中文或韩语。"
+    ],
+    "eyebrow": "用相机和照片输入文字",
+    "footer": "离线识别，在设备上完成",
+    "featureAlt": "扫描纸上的数字，移除空格后传入输入框，并显示确认标记。"
+  },
+  "zh-TW": {
+    "title": "Baro Input",
+    "short": "用相機或照片辨識文字和數字，確認後直接填入輸入欄位的輔助鍵盤",
+    "full": "把紙張和標籤上的文字變成輸入內容，減少逐字重打。\n\nBaro Input 是一款 Android 輔助鍵盤，可從拍攝的照片或已儲存的圖片中辨識文字和數字。選擇需要的行，與原圖核對後點選「插入」，即可填入目前的輸入欄位。\n\n使用方法\n1. 在 Android 鍵盤設定中啟用 Baro Input。\n2. 點選其他應用程式的輸入欄位，切換至 Baro Input。\n3. 拍照或選擇裝置中的圖片。\n4. 確認辨識內容，然後點選「插入」。\n\n適合日常輸入\n• 辨識產品編號、標籤、印刷便條等內容\n• 從多行文字中選擇一行或全部內容\n• 移除空格、移動游標、刪除字元或新增分隔符號\n• 使用數字鍵盤修正辨識出的編號\n• 在其他應用程式中使用前，先用內建範例練習\n\n支援四種辨識語言\n可辨識英語、日語、中文和韓語。辨識語言可獨立於介面語言選擇。介面支援英語、日語、韓語、簡體中文和繁體中文，跟隨裝置設定中的支援語言，其他語言則顯示英語。\n\n在裝置上處理\n辨識模型隨應用程式提供，無需連網即可使用。無需帳號，沒有廣告。照片和辨識結果不會上傳至開發者伺服器。輸入工作階段結束後會清除暫存結果。\n\nBaro Input 是視需要切換使用的獨立鍵盤，不會向 Gboard 或三星鍵盤新增按鈕。密碼輸入欄位無法使用掃描功能。相似字元或中文簡繁字形可能被誤辨識，請在插入前與原圖核對。如需輸入新文字，請先插入結果，再用慣用鍵盤編輯。\n\n聯絡支援：ceo@umo.im",
+    "headlines": [
+      "照片裡的文字，\n不必逐字重打。",
+      "只選需要的行，\n輸入更省事。",
+      "先核對原圖，\n再直接插入。",
+      "確認的內容，\n進入輸入欄位。",
+      "四種語言，\n同樣簡單。"
+    ],
+    "subtitles": [
+      "用相機拍照，或選擇已儲存的圖片。",
+      "選擇其中一行，也可以選擇全部內容。",
+      "移除空格，也能修正辨識有誤的數字。",
+      "在其他應用程式中使用前，先安心練習。",
+      "英語、日語、中文、韓語"
+    ],
+    "alts": [
+      "照片辨識練習頁面，顯示包裝盒照片和辨識按鈕。",
+      "從包裝盒標籤辨識出的多行文字中選擇需要的行。",
+      "同時顯示原始照片與辨識編號，供插入前核對。",
+      "插入後，辨識出的編號顯示在練習結果欄位中。",
+      "辨識語言選單，可選擇英語、日語、中文或韓語。"
+    ],
+    "eyebrow": "用相機和照片輸入文字",
+    "footer": "離線辨識，在裝置上完成",
+    "featureAlt": "掃描紙上的數字，移除空格後傳入輸入欄位，並顯示確認標記。"
+  }
+}

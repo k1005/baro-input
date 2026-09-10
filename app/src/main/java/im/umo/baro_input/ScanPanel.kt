@@ -14,9 +14,7 @@ import androidx.camera.view.PreviewView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import com.google.mlkit.vision.text.TextRecognizer
 import im.umo.baro_input.Ui.block
 import im.umo.baro_input.Ui.cell
 import im.umo.baro_input.Ui.dp
@@ -42,8 +40,8 @@ internal class ScanPanel(
     private var dead = false
     private var operation = 0
     private var camera = CameraSession(context)
-    private val korean = lazy { TextRecognition.getClient(KoreanTextRecognizerOptions.Builder().build()) }
-    private val latin = lazy { TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) }
+    private var ocrLanguage = OcrLanguage.selected(context)
+    private val recognizers = mutableMapOf<OcrLanguage, TextRecognizer>()
     private lateinit var body: LinearLayout
     private lateinit var footer: LinearLayout
 
@@ -144,6 +142,32 @@ internal class ScanPanel(
         modes.cell(Ui.modeButton(context, message(R.string.text_mode), !numeric) { numeric = false; show(Page.CAMERA) })
         modes.cell(Ui.modeButton(context, message(R.string.number_mode), numeric) { numeric = true; show(Page.CAMERA) })
         body.block(modes, if (body.childCount == 0) 0 else 12)
+        if (!numeric) {
+            val label = Ui.text(context, message(R.string.ocr_language), 14f).apply { id = View.generateViewId() }
+            val languages = OcrLanguage.entries
+            val picker = Spinner(context).apply {
+                id = View.generateViewId()
+                minimumHeight = context.dp(48)
+                adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item,
+                    languages.map { message(it.label) }).apply {
+                    setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                }
+                setSelection(languages.indexOf(ocrLanguage))
+                onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                        val selected = languages[position]
+                        if (selected != ocrLanguage) {
+                            ocrLanguage = selected
+                            selected.save(context)
+                        }
+                    }
+                    override fun onNothingSelected(parent: AdapterView<*>?) = Unit
+                }
+            }
+            label.labelFor = picker.id
+            body.block(label, 8)
+            body.block(picker, 0)
+        }
         sampleBitmap?.let { bitmap ->
             body.block(ImageView(context).apply {
                 setImageBitmap(bitmap); scaleType = ImageView.ScaleType.FIT_CENTER
@@ -202,7 +226,8 @@ internal class ScanPanel(
     private fun recognize(bitmap: Bitmap) {
         val version = operation
         val task = try {
-            (if (numeric) latin.value else korean.value).process(InputImage.fromBitmap(bitmap, 0))
+            val language = if (numeric) OcrLanguage.ENGLISH else ocrLanguage
+            recognizers.getOrPut(language) { language.createRecognizer() }.process(InputImage.fromBitmap(bitmap, 0))
         } catch (_: Exception) { fail(R.string.ocr_error); return }
         task
             .addOnSuccessListener { result ->
@@ -335,8 +360,8 @@ internal class ScanPanel(
     fun dispose() {
         if (dead) return
         dead = true; operation++; camera.close()
-        if (korean.isInitialized()) korean.value.close()
-        if (latin.isInitialized()) latin.value.close()
+        recognizers.values.forEach { it.close() }
+        recognizers.clear()
         sampleBitmap = null; image = null; raw = ""; lines = emptyList(); removeAllViews()
     }
 }
