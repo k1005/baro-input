@@ -9,3 +9,4 @@ local.properties
 captures/
 !store-assets/captures/
 releases/*.apk
+work/release-check/
